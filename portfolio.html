@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dylan Scharff | Cybersecurity Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #79c0ff;
+    }
+
+    header {
+      background-color: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 20px 10%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      color: #58a6ff;
+      font-size: 1.4rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      color: #c9d1d9;
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #238636;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #2ea043;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #58a6ff;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #58a6ff;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #e6edf3;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background-color: #21262d;
+      border: 1px solid #30363d;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .job {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .job h3 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+
+      <h1>Dylan Scharff</h1>
+
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <section class="hero">
+
+    <h2>Cybersecurity & IT Portfolio</h2>
+
+    <p>
+      CompTIA Network+ and Security+ certified IT and cybersecurity professional
+      with hands-on experience in networking, security labs, penetration testing platforms,
+      and home lab environments. Passionate about cybersecurity, system administration,
+      networking, and continuous technical learning through practical labs and projects.
+    </p>
+
+    <a href="Resume.pdf" download class="button">
+  Download Resume
+    </a>
+
+  </section>
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+      I am an aspiring cybersecurity professional currently focused on building hands-on
+      technical experience through home labs, penetration testing platforms, and independent
+      learning. My interests include Active Directory administration, networking, defensive
+      security, Linux systems, and security operations concepts.
+      <br><br>
+
+      I have completed extensive cybersecurity training through platforms such as TryHackMe
+      and Hack The Box, while also continuing to expand my knowledge in programming,
+      networking, and web technologies.
+      <br><br>
+
+      Currently, I am developing a Windows Active Directory home lab environment and
+      documenting technical walkthroughs and cybersecurity projects through GitHub
+      and this portfolio website.
+    </p>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+
+    <h2 class="section-title">Projects & Independent Learning</h2>
+
+    <div class="card-container">
+
+      <!-- AD LAB -->
+      <div class="card">
+
+        <h3>Windows Active Directory Home Lab</h3>
+
+        <p>
+          Building a Windows Active Directory environment using virtual machines
+          to gain hands-on experience with domain controllers, user management,
+          networking, Group Policy, and Windows Server administration.
+          <br><br>
+
+          Additional goals include integrating security monitoring tools,
+          attack simulation environments, and defensive logging solutions.
+        </p>
+
+        <br>
+
+        <!-- ADD GITHUB LINK -->
+        <a href="activedirectory.html">View Project →</a>
+
+      </div>
+
+      <!-- OVERTHEWIRE -->
+      <div class="card">
+
+        <h3>OverTheWire Bandit Walkthrough</h3>
+
+        <p>
+          Linux-focused walkthrough documenting problem-solving processes,
+          command-line fundamentals, file permissions, privilege concepts,
+          and networking basics through the OverTheWire Bandit wargame series.
+          <br><br>
+
+          Includes detailed explanations of commands, concepts, and lessons learned.
+        </p>
+
+        <br>
+
+        <!-- ADD GITHUB LINK -->
+        <a href="bandit.html">View Project →</a>
+
+      </div>
+
+      <!-- TRYHACKME -->
+      <div class="card">
+
+        <h3>TryHackMe & Hack The Box Labs</h3>
+
+        <p>
+          Completed extensive cybersecurity labs covering networking,
+          vulnerability analysis, SOC simulations, web security, Linux,
+          Windows fundamentals, and basic penetration testing concepts.
+          <br><br>
+
+          Maintained a 225-day active cybersecurity training streak on TryHackMe.
+        </p>
+
+        <br>
+
+        <!-- ADD PROFILE LINKS -->
+        <a href="#">View Profiles →</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-list">
+
+      <div class="skill">TCP/IP</div>
+      <div class="skill">DNS</div>
+      <div class="skill">VPNs</div>
+      <div class="skill">Linux</div>
+      <div class="skill">Windows</div>
+      <div class="skill">Wireshark</div>
+      <div class="skill">Snort</div>
+      <div class="skill">Burp Suite</div>
+      <div class="skill">Active Directory</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">GitHub</div>
+      <div class="skill">TryHackMe</div>
+      <div class="skill">Hack The Box</div>
+      <div class="skill">Microsoft Office</div>
+
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="timeline">
+
+      <div class="job">
+
+        <h3>WOW Properties — Real Estate Agent</h3>
+
+        <p><strong>2023–2026</strong></p>
+
+        <br>
+
+        <p>
+          Managed client relationships, sales processes, and contract creation while
+          developing strong communication, organization, and problem-solving skills.
+        </p>
+
+      </div>
+
+      <div class="job">
+
+        <h3>The Home Depot — Night Operations Associate</h3>
+
+        <p><strong>2022–2023</strong></p>
+
+        <br>
+
+        <p>
+          Supported warehouse logistics operations, operated forklifts,
+          and worked efficiently in fast-paced team environments.
+        </p>
+
+      </div>
+
+      <div class="job">
+
+        <h3>Automotive Technician</h3>
+
+        <p><strong>2021–2022</strong></p>
+
+        <br>
+
+        <p>
+          Installed car speakers, window tinting, and ignition interlock devices
+          while troubleshooting wiring and installation issues.
+        </p>
+
+      </div>
+
+      <div class="job">
+
+        <h3>Restaurant Server</h3>
+
+        <p><strong>2018–2021</strong></p>
+
+        <br>
+
+        <p>
+          Delivered customer service in high-volume environments while building
+          strong multitasking and communication skills.
+        </p>
+
+      </div>
+
+        <div class="job">
+
+        <h3>Daniel Law Firm — Intern</h3>
+
+        <p><strong>2018</strong></p>
+
+        <br>
+
+        <p>
+            Assisted with administrative tasks, document organization,
+            and general office support in a professional legal environment.
+            Developed communication, organization, and attention-to-detail skills.
+        </p>
+
+        </div>
+
+        <div class="job">
+
+        <h3>Subway — Sandwich Artist</h3>
+
+        <p><strong>2016–2018</strong></p>
+
+        <br>
+
+        <p>
+            Provided customer service in a fast-paced food service environment
+            while developing teamwork, multitasking, and communication skills.
+        </p>
+
+        </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:dylansscharff@gmail.com">
+        dylansscharff@gmail.com
+      </a>
+      <br><br>
+
+      <strong>GitHub:</strong>
+      <a href="https://github.com/dylanscharff" target="_blank">
+        github.com/dylanscharff
+      </a>
+      <br><br>
+
+      <strong>Location:</strong>
+      Dripping Springs, Texas
+      <br><br>
+
+      <strong>Phone Number:</strong>
+      512-230-8697
+    </p>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Dylan Scharff | Cybersecurity Portfolio
+    </p>
+
+  </footer>
+
+</body>
+</html>

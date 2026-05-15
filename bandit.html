@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OverTheWire Bandit Walkthrough | Dylan Scharff</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      padding: 40px 10%;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #79c0ff;
+    }
+
+    h1 {
+      color: #58a6ff;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 15px;
+      color: #58a6ff;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .section {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    .code {
+      background-color: #010409;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 15px;
+      font-family: monospace;
+      overflow-x: auto;
+      margin: 20px 0;
+      color: #79c0ff;
+    }
+
+    .screenshot-placeholder {
+      border: 2px dashed #30363d;
+      border-radius: 10px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      color: #8b949e;
+      background-color: #0d1117;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #238636;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .back-button:hover {
+      background-color: #2ea043;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html">← Back to Portfolio</a>
+
+  <h1>OverTheWire Bandit Walkthrough</h1>
+
+  <p>
+    This page documents my progress through the OverTheWire Bandit wargame,
+    including Linux fundamentals, command-line usage, file permissions,
+    networking concepts, and problem-solving techniques.
+  </p>
+  <p>
+    The bandit wargame starts off incredibly simple, with the first few levels 
+    teaching the basics of navigating the file system, but gets progressively 
+    more difficult as the game goes on.
+  </p>
+
+  <!-- BANDIT LEVEL 0 -->
+  <div class="section">
+
+    <h2>Bandit Level 0 → Level 1</h2>
+
+    <p>
+      <strong>Objective:</strong><br>
+      Log into the Bandit server using SSH and retrieve the password
+      for the next level from the readme file.
+    </p>
+
+    <p>
+      <strong>Concepts Learned:</strong>
+    </p>
+
+    <ul>
+      <li>SSH login basics</li>
+      <li>Linux terminal navigation</li>
+      <li>Creating and navigating to a new directory</li>
+      <li>Using ls and cat commands</li>
+      <li>Reading files from the command line</li>
+    </ul>
+
+    <br>
+
+    <p>
+      <strong>Commands Used:</strong>
+    </p>
+
+    <div class="code">
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+<br>
+ls
+<br>
+cat readme
+    </div>
+
+    <p>
+      <strong>Explanation:</strong><br>
+      I created a directory for future passwords,
+      connected to the remote Linux server using SSH,
+      listed the files in the current directory,
+      and used the cat command to read the contents
+      of the readme file containing the password
+      for the next level.
+    </p>
+
+    <img src="screenshots/bandit0-1.png"
+     alt="Bandit Level 0 Screenshot"
+     style="width:100%; border-radius:10px; margin-top:20px;">
+    <img src="screenshots/bandit0-2.png"
+     alt="Bandit Level 0 Screenshot"
+     style="width:100%; border-radius:10px; margin-top:20px;">
+    </div>
+
+  </div>
+
+  <!-- NEXT LEVEL TEMPLATE -->
+ <!-- BANDIT LEVEL 1 -->
+<div class="section">
+
+  <h2>Bandit Level 1 → Level 2</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level located in the file named ".-".
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Hidden files in Linux (dotfiles)</li>
+    <li>Basic file permissions</li>
+    <li>Using 'ls -a' to view hidden files</li>
+    <li>Using 'cat' to read file contents</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+ls 
+<br>
+-a
+<br>
+cat ./
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Hidden files in Linux begin with a dot (.). Using "ls -a" lists all files, 
+    including hidden ones. The "cat" command is then used to read the content 
+    of the file containing the password for the next level.
+  </p>
+    <img src="screenshots/bandit1-1.png"
+     alt="Bandit Level 1 Screenshot"
+     style="width:100%; border-radius:10px; margin-top:20px;">
+    <img src="screenshots/bandit1-2.png"
+     alt="Bandit Level 1 Screenshot"
+     style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 2 -->
+<div class="section">
+
+  <h2>Bandit Level 2 → Level 3</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from a file called "spaces in this filename".
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Handling file names with spaces</li>
+    <li>Using escape characters in Linux</li>
+    <li>File reading and command-line navigation</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+cat "spaces in this filename"
+<br>
+# OR using escape characters
+<br>
+cat spaces\ in\ this\ filename
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    File names with spaces require special handling. You can enclose the filename 
+    in quotes or use backslashes to escape spaces. Reading the file with "cat" 
+    reveals the password for the next level.
+  </p>
+
+    <img src="screenshots/bandit2.png"
+     alt="Bandit Level 2 Screenshot"
+     style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+
+<!-- BANDIT LEVEL 3 -->
+<div class="section">
+
+  <h2>Bandit Level 3 → Level 4</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the hidden file ".Hiding-From-You" 
+    located in the "inhere" directory.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Navigating directories in Linux</li>
+    <li>Identifying hidden files (files starting with ".")</li>
+    <li>Using "ls -a" to list hidden files</li>
+    <li>Reading file contents with "cat"</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+cd inhere
+<br>
+ls -a
+<br>
+cat ./...Hiding-From-You
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Hidden files in Linux start with a dot (.) and are not shown by a normal "ls" command. 
+    Using "ls -a" reveals all files, including hidden ones. Once found, "cat" can be used 
+    to read the contents of ".Hiding-From-You" to get the password for the next level.
+  </p>
+
+  <img src="screenshots/bandit3.png"
+       alt="Bandit Level 3 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 4 -->
+<div class="section">
+
+  <h2>Bandit Level 4 → Level 5</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file with an unusual name "-" in the "inhere" directory.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Handling files with special characters in their names</li>
+    <li>Using "./" to specify a file explicitly</li>
+    <li>Reading file contents with "cat"</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+cd inhere
+<br>
+ls -a
+<br>
+cat ./-
+<br>
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Some filenames in Linux can start with a dash (-), which can be interpreted as an option by commands. 
+    Prefixing the filename with "./" tells the shell to treat it as a file in the current directory, 
+    allowing "cat ./-" to read the contents and retrieve the password for the next level.
+  </p>
+
+  <img src="screenshots/bandit4.png"
+       alt="Bandit Level 4 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 5 → 6 -->
+<div class="section">
+
+  <h2>Bandit Level 5 → Level 6</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from a file hidden somewhere inside the "inhere" directory. 
+    The file is 1033 bytes in size, not executable, and readable as text.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Searching files recursively using <code>find</code></li>
+    <li>Filtering by file size, permissions, and readability</li>
+    <li>Combining conditions in <code>find</code> with <code>\!</code> for negation</li>
+    <li>Reading file contents with <code>cat</code></li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+cd 
+<br>
+find . -size 1033c \! -executable -readable
+<br>
+cat [filename_found]
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level introduces the <code>find</code> command to locate files based on specific criteria. 
+    Here, we search for a file that is exactly 1033 bytes (<code>-size 1033c</code>), not executable 
+    (<code>\! -executable</code>), and readable (aka some kind of text file)(<code>-readable</code>). Once <code>find</code> 
+    returns the filename, we use <code>cat</code> to display its contents and retrieve the password 
+    for Bandit Level 6.
+  </p>
+  <img src="screenshots/bandit5-1.png"
+       alt="Bandit Level 5 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit5-3.png"
+       alt="Bandit Level 5 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 6 → 7 -->
+<div class="section">
+
+  <h2>Bandit Level 6 → Level 7</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level by finding a file somewhere on the server that is owned by user "bandit7", owned by group "bandit6", and is 33 bytes in size.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Searching the entire filesystem with <code>find</code></li>
+    <li>Filtering files by user ownership, group ownership, and size</li>
+    <li>Suppressing permission denied errors with <code>2&gt;/dev/null</code></li>
+    <li>Reading file contents with <code>cat</code></li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null
+<br>
+cat [filename_found]
+
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level expands on the use of the <code>find</code> command by searching the entire filesystem 
+    instead of a single directory. The command filters files that are owned by user 
+    <code>bandit7</code>, belong to group <code>bandit6</code>, and are exactly 33 bytes in size. 
+    Since many directories cannot be accessed by the current user, permission errors appear frequently. 
+    Redirecting errors with <code>2&gt;/dev/null</code> hides those messages, making the output easier 
+    to read. Once the correct file is found, <code>cat</code> is used to display the password for 
+    Bandit Level 7.
+  </p>
+
+  <img src="screenshots/bandit6-1.png"
+       alt="Bandit Level 6 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit6-2.png"
+       alt="Bandit Level 6 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit6-3.png"
+       alt="Bandit Level 6 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 7 → 8 -->
+
+<div class="section">
+
+  <h2>Bandit Level 7 → Level 8</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file "data.txt" next to the word "millionth".
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Searching file contents with <code>grep</code></li>
+    <li>Matching specific text patterns</li>
+    <li>Extracting useful information from large files</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+grep "millionth" data.txt
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level introduces the <code>grep</code> command, which is used to search through files for 
+    specific text patterns. By searching <code>data.txt</code> for the word 
+    <code>"millionth"</code>, the matching line is displayed along with the password for 
+    Bandit Level 8.
+  </p>
+
+  <img src="screenshots/bandit7.png"
+       alt="Bandit Level 7 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 8 → 9 -->
+<div class="section">
+
+  <h2>Bandit Level 8 → Level 9</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file "data.txt". 
+    The password is the only line of text that occurs exactly once.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Sorting data with <code>sort</code></li>
+    <li>Finding unique lines using <code>uniq</code></li>
+    <li>Combining Linux commands with pipes (<code>|</code>)</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+sort data.txt | uniq -u
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level introduces the concept of piping commands together. The 
+    <code>sort</code> command organizes all lines in the file alphabetically, which is required 
+    for <code>uniq</code> to work properly. The <code>uniq -u</code> command then filters the 
+    results and displays only the line that appears exactly once, revealing the password for 
+    Bandit Level 9.
+  </p>
+
+  <img src="screenshots/bandit8.png"
+       alt="Bandit Level 8 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 9 → 10 -->
+<div class="section">
+
+  <h2>Bandit Level 9 → Level 10</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file "data.txt". 
+    The password is stored in one of the few human-readable strings and is preceded by several "=" characters.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Extracting readable text from binary files with <code>strings</code></li>
+    <li>Searching command output using <code>grep</code></li>
+    <li>Combining commands with pipes (<code>|</code>)</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+strings data.txt | grep "==="
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level introduces working with binary or non-human-readable files. The 
+    <code>strings</code> command extracts readable text from <code>data.txt</code>, while 
+    <code>grep</code> searches through that output for lines containing multiple "=" characters. 
+    The matching line reveals the password for Bandit Level 10.
+  </p>
+
+  <img src="screenshots/bandit9.png"
+       alt="Bandit Level 9 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 10-11 -->
+<div class="section">
+
+  <h2>Bandit Level 10 → Level 11</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file "data.txt", 
+    which contains base64 encoded data.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Understanding Base64 encoding</li>
+    <li>Decoding data with the <code>base64</code> command</li>
+    <li>Reading encoded file contents in Linux</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+base64 -d data.txt
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level introduces Base64 encoding, a method used to represent binary data as readable text. 
+    The <code>base64 -d</code> command decodes the contents of <code>data.txt</code> back into 
+    plain text, revealing the password for Bandit Level 11.
+  </p>
+
+  <img src="screenshots/bandit10.png"
+       alt="Bandit Level 10 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 11 → 12 -->
+
+<div class="section">
+
+  <h2>Bandit Level 11 → Level 12</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file "data.txt", 
+    where all lowercase and uppercase letters have been rotated by 13 positions using ROT13 encryption.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Understanding ROT13 substitution ciphers</li>
+    <li>Decoding encrypted text with CyberChef</li>
+    <li>Recognizing simple encoding and encryption techniques</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+cat data.txt
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level introduces the ROT13 cipher, a simple substitution cipher that rotates each letter 
+    by 13 positions in the alphabet. After displaying the contents of <code>data.txt</code>, 
+    the encoded text can be copied into CyberChef and decoded using the ROT13 operation. 
+    The decoded output reveals the password for Bandit Level 12.
+  </p>
+
+  <img src="screenshots/bandit11.png"
+       alt="Bandit Level 11 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 12 → 13 -->
+<div class="section">
+
+  <h2>Bandit Level 12 → Level 13</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the file "data.txt", 
+    which contains a hexdump of a repeatedly compressed file.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Reversing a hexdump using <code>xxd</code></li>
+    <li>Identifying file types with <code>file</code></li>
+    <li>Decompressing multiple archive formats</li>
+    <li>Renaming files with <code>mv</code></li>
+    <li>Working in temporary directories with <code>mktemp</code></li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+mktemp -d
+<br>
+cp data.txt /tmp/[temporary_directory]
+<br>
+cd /tmp/[temporary_directory]
+<br>
+xxd -r data.txt > data
+<br>
+mv data data.gz
+<br>
+gunzip data.gz
+<br>
+mv data data.bz2
+<br>
+bunzip2 data.bz2
+<br>
+mv data data.gz
+<br>
+gunzip data.gz
+<br>
+mv data data.tar
+<br>
+tar -xf data.tar
+<br>
+mv data5.bin data.tar
+<br>
+tar -xf data.tar
+<br>
+mv data6.bin data.bz2
+<br>
+bunzip2 data.bz2
+<br>
+mv data data.tar
+<br>
+tar -xf data.tar
+<br>
+mv data8.bin data.gz
+<br>
+gunzip data.gz
+<br>
+cat data
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    This level is a multi-step exercise in identifying and extracting compressed files. 
+    The process begins by creating a temporary working directory and reversing the hexdump 
+    in <code>data.txt</code> using <code>xxd -r</code>. The resulting file is repeatedly analyzed 
+    with the <code>file</code> command to determine its format, then renamed and decompressed 
+    using the appropriate extraction utility such as <code>gunzip</code>, 
+    <code>bunzip2</code>, or <code>tar</code>. After several layers of compression are removed, 
+    the final file contains the password for Bandit Level 13. The commands listed above are the
+    necessary commands to complete the room, however when doing it yourself it is necessary to
+    use the ls and file command multiple times in order to find the file name/type. I used -d for 
+    decode multiple times in the example, however doing it the way explained in the above code 
+    section works as well.
+  </p>
+
+  <img src="screenshots/bandit12-1.png"
+       alt="Bandit Level 12 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit12-2.png"
+       alt="Bandit Level 12 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit12-3.png"
+       alt="Bandit Level 12 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 13 → 14 -->
+<div class="section">
+
+  <h2>Bandit Level 13 → Level 14</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the private SSH key for the next level and use it to log in as user "bandit14". 
+    The actual password for Bandit Level 14 is stored in <code>/etc/bandit_pass/bandit14</code> 
+    and can only be accessed by user "bandit14".
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Viewing the contents of files with <code>cat</code></li>
+    <li>Editing and inspecting files with <code>nano</code></li>
+    <li>Setting secure file permissions using <code>chmod 700</code></li>
+    <li>Logging into SSH with a private key and custom port using <code>-i</code> and <code>-p</code></li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+cat sshkey.private 
+<br>
+nano [file_name]
+<br>
+chmod 700 [file_name]
+<br>
+ssh bandit14@localhost -p 2220 -i [file_name] 
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    In this level, the private SSH key is the credential for logging in as user "bandit14". 
+    First, use <code>cat</code> to copy <code>sshkey.private</code> from Bandit 13's home directory to 
+    your local machine. Next use <code>nano</code> to create a file on your local machine and paste the key.
+    Next, set secure permissions on the key with <code>chmod 700</code> to 
+    prevent SSH from rejecting it. Finally, use <code>ssh bandit14@localhost -p 2220 -i [file_name] </code> 
+    to authenticate as bandit14 and access the password stored in 
+    <code>/etc/bandit_pass/bandit14</code>. Note that you cannot login to bandit14 directly from 
+    bandit13 using the private key, as explained in the HINT file.
+  </p>
+
+  <img src="screenshots/bandit13-1.png"
+       alt="Bandit Level 13 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit13-2.png"
+       alt="Bandit Level 13 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit13-3.png"
+       alt="Bandit Level 13 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">   
+  <img src="screenshots/bandit13-4.png"
+       alt="Bandit Level 13 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">  
+</div>
+
+<!-- BANDIT LEVEL 14 → 15 -->
+<div class="section">
+
+  <h2>Bandit Level 14 → Level 15</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level by submitting the current level's password 
+    to port 30000 on localhost.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Interacting with network services using <code>nc</code> (Netcat)</li>
+    <li>Understanding client-server communication on localhost</li>
+    <li>Sending input to a network service and receiving a response</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+nc localhost 30000
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 14 introduces connecting to network services using <code>nc</code> (Netcat). 
+    By running <code>nc localhost 30000</code> and submitting the password for Bandit Level 14, 
+    the service responds with the password for Bandit Level 15. This demonstrates a simple TCP 
+    client-server interaction on the local machine. There are other ways to complete this room, 
+    however I find this to be the most simple.
+  </p>
+
+  <img src="screenshots/bandit14.png"
+       alt="Bandit Level 14 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 15 → 16 -->
+<div class="section">
+
+  <h2>Bandit Level 15 → Level 16</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level by submitting the current level's password 
+    to port 30001 on localhost using SSL/TLS encryption.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Interacting with SSL/TLS encrypted network services using <code>openssl s_client</code></li>
+    <li>Understanding secure client-server communication on localhost</li>
+    <li>Sending input over an encrypted connection and reading the response</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+openssl s_client -connect localhost:30001
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 15 introduces secure network communication. Using 
+    <code>openssl s_client -connect localhost:30001</code>, you establish an encrypted 
+    connection to the service running on port 30001. By submitting the Bandit 15 password over 
+    this connection, the service responds with the password for Bandit Level 16. This demonstrates 
+    how SSL/TLS encryption can be used to secure data transmitted over a network.
+  </p>
+
+  <img src="screenshots/bandit15-1.png"
+       alt="Bandit Level 15 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit15-2.png"
+       alt="Bandit Level 15 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+</div>
+
+<!-- BANDIT LEVEL 16 → 17 -->
+<div class="section">
+
+  <h2>Bandit Level 16 → Level 17</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level by submitting the current level's password 
+    to the correct port on localhost (between 31000 and 32000). Identify which port is 
+    listening and which server uses SSL/TLS. The server that responds with the credentials 
+    for Bandit 17 must be identified.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Scanning a range of localhost ports to find open services using <code>nmap</code></li>
+    <li>Distinguishing between plain and SSL/TLS encrypted services</li>
+    <li>Submitting input to a service over SSL/TLS using <code>openssl s_client</code></li>
+    <li>Understanding the process of retrieving credentials securely from a local service</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+
+nmap -p 31000-32000 localhost
+<br>
+nmap -A [open ports] localhost
+<br>
+openssl s_client -connect localhost:31790 -quiet
+<br>
+echo "bandit16password" | openssl s_client -connect localhost:31790 -quiet
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 16 introduces the concept of multiple local services and SSL/TLS identification. 
+    First, use <code>nmap -p 31000-32000 localhost</code> to scan the specified range for open ports. 
+    Once the open ports are identified, check which ones require SSL/TLS using 
+    <code>openssl s_client -connect &lt;port&gt; -quiet</code> or the nmap<code>-A</code> flag
+    Only one SSL/TLS service will return 
+    the credentials for the next level. Submitting the Bandit 16 password to port 31790 using 
+    <code>echo "bandit16password" | openssl s_client -connect localhost:31790 -quiet</code> returns 
+    the RSA private key needed to log in to Bandit Level 17. You must save it on your host 
+    machine, as you cant move from bandit16 to 17 inside the lab.
+  </p>
+
+  <img src="screenshots/bandit16-1.png"
+       alt="Bandit Level 16 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit16-2.png"
+       alt="Bandit Level 16 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit16-3.png"
+       alt="Bandit Level 16 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit16-4.png"
+       alt="Bandit Level 16 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+</div>
+
+<!-- BANDIT LEVEL 17 → 18 -->
+<div class="section">
+
+  <h2>Bandit Level 17 → Level 18</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level by identifying the line in <code>passwords.new</code> 
+    that has been changed compared to <code>passwords.old</code>.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Comparing two files to identify differences using <code>diff</code></li>
+    <li>Understanding how small changes in text files can be detected programmatically</li>
+    <li>Basic file inspection and manipulation in the Linux command line</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+diff passwords.old passwords.new
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 17 focuses on file comparison. By running <code>diff passwords.old passwords.new</code>, 
+    the command outputs the line that differs between the two files. This single line is the password 
+    for Bandit Level 18. This exercise demonstrates how small changes in text can be efficiently 
+    identified using standard Linux command-line tools.
+  </p>
+
+  <img src="screenshots/bandit17.png"
+       alt="Bandit Level 17 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+<!-- BANDIT LEVEL 18 → 19 -->
+<div class="section">
+
+  <h2>Bandit Level 18 → Level 19</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level from the <code>readme</code> file in the home directory. 
+    Note that the <code>.bashrc</code> file has been modified to immediately log you out upon SSH login.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Reading files without triggering login scripts using SSH options</li>
+    <li>Understanding how <code>.bashrc</code> can execute commands automatically upon login</li>
+    <li>Using command execution directly via SSH to bypass interactive shells</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat readme'
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 18 demonstrates a way to bypass problematic <code>.bashrc</code> scripts that execute 
+    automatically on login. By passing the command <code>cat ~/readme</code> directly to SSH, the shell 
+    does not start interactively, so the logout command in <code>.bashrc</code> is not triggered. The output 
+    of this command is the password for Bandit Level 19.
+  </p>
+
+  <img src="screenshots/bandit18.png"
+       alt="Bandit Level 18 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 19 → 20 -->
+<div class="section">
+
+  <h2>Bandit Level 19 → Level 20</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Retrieve the password for the next level by using the setuid binary located in the home directory. 
+    Executing the binary without arguments reveals how to use it. After using it, the password can be 
+    found in <code>/etc/bandit_pass</code>.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Understanding setuid binaries and their ability to run with elevated privileges</li>
+    <li>Executing a binary to interact with the system and perform actions as another user</li>
+    <li>Accessing protected files using elevated privileges</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+
+ls -l <br>
+
+./bandit20-do<br>
+
+./bandit20-do cat /etc/bandit_pass/bandit20
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 19 introduces setuid binaries, which execute with the privileges of the file owner. 
+    Running the binary in your home directory without arguments shows how to interact with it. Once used 
+    correctly, it allows you to access <code>/etc/bandit_pass</code>, which contains the password for 
+    Bandit Level 20. This exercise demonstrates controlled privilege escalation and safe usage of 
+    setuid programs.
+  </p>
+
+  <img src="screenshots/bandit19.png"
+       alt="Bandit Level 19 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+<!-- BANDIT LEVEL 20 → 21 -->
+<div class="section">
+
+  <h2>Bandit Level 20 → Level 21</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Use the setuid binary in the home directory to connect to a localhost port. 
+    The binary reads a line from the connection and checks it against the password from Bandit 20. 
+    If correct, it returns the password for Bandit 21.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Using setuid binaries to perform actions with elevated privileges</li>
+    <li>Connecting to a local service on a specified port</li>
+    <li>Sending input to a program over a network connection</li>
+    <li>Automating interactions with a local service to retrieve credentials</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+
+./suconnect
+<br>
+nc -l -p
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+  In Bandit Level 20, the setuid binary requires a port number as an argument. To retrieve the next password, 
+  you first start a listener on the chosen port using <code>nc -l -p &lt;port&gt;</code> in a separate terminal. 
+  Then, you run the setuid binary with <code>./suconnect &lt;port&gt;</code>. The binary connects to your 
+  listener, sends the previous level's password, and in response, the listener receives the password for 
+  Bandit 21. This demonstrates how a local service can communicate with a client and transmit credentials 
+  securely via a network connection.
+  </p>
+
+  <img src="screenshots/bandit20-1.png"
+       alt="Bandit Level 20 Screenshot - Setuid binary execution"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+  <img src="screenshots/bandit20-2.png"
+       alt="Bandit Level 20 Screenshot - Password received"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 21 → 22 -->
+<div class="section">
+
+  <h2>Bandit Level 21 → Level 22</h2>
+
+  <p>
+    <strong>Objective:</strong><br>
+    Investigate a program that is running automatically via <code>cron</code>. 
+    Examine the configuration in <code>/etc/cron.d/</code> to see which command is being executed.
+  </p>
+
+  <p>
+    <strong>Concepts Learned:</strong>
+  </p>
+
+  <ul>
+    <li>Understanding cron jobs and the <code>cron</code> scheduler</li>
+    <li>Inspecting system cron configuration files in <code>/etc/cron.d/</code></li>
+    <li>Analyzing automated commands and scheduled tasks in Linux</li>
+  </ul>
+
+  <p>
+    <strong>Commands Used:</strong>
+  </p>
+
+  <div class="code">
+ls -l /etc/cron.d/<br>
+cat /etc/cron.d/bandit20
+<br>
+cat /usr/bin/cronjob_bandit22.sh 
+<br>
+cat /tmp/(tmp file from bandit22.sh)
+  </div>
+
+  <p>
+    <strong>Explanation:</strong><br>
+    Bandit Level 21 introduces scheduled tasks via <code>cron</code>. By listing the contents of 
+    <code>/etc/cron.d/</code> and inspecting the relevant file, you can see the exact command that is 
+    executed automatically at regular intervals. Understanding cron job configurations is crucial for 
+    system administration and security auditing, as these jobs can run scripts or programs with elevated 
+    privileges without manual intervention.
+  </p>
+
+  <img src="screenshots/bandit21.png"
+       alt="Bandit Level 21 Screenshot"
+       style="width:100%; border-radius:10px; margin-top:20px;">
+
+</div>
+
+<!-- BANDIT LEVEL 22 → 23 -->
+<div class="section">
+  <h2>Bandit Level 22 → Level 23</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 23 → 24 -->
+<div class="section">
+  <h2>Bandit Level 23 → Level 24</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 24 → 25 -->
+<div class="section">
+  <h2>Bandit Level 24 → Level 25</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 25 → 26 -->
+<div class="section">
+  <h2>Bandit Level 25 → Level 26</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 26 → 27 -->
+<div class="section">
+  <h2>Bandit Level 26 → Level 27</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 27 → 28 -->
+<div class="section">
+  <h2>Bandit Level 27 → Level 28</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 28 → 29 -->
+<div class="section">
+  <h2>Bandit Level 28 → Level 29</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 29 → 30 -->
+<div class="section">
+  <h2>Bandit Level 29 → Level 30</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 30 → 31 -->
+<div class="section">
+  <h2>Bandit Level 30 → Level 31</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 31 → 32 -->
+<div class="section">
+  <h2>Bandit Level 31 → Level 32</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 32 → 33 -->
+<div class="section">
+  <h2>Bandit Level 32 → Level 33</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+
+<!-- BANDIT LEVEL 33 → 34 -->
+<div class="section">
+  <h2>Bandit Level 33 → Level 34</h2>
+  <p><strong>Objective:</strong> Add description for this level.</p>
+  <p><strong>Concepts Learned:</strong></p>
+  <ul><li>Concept 1</li><li>Concept 2</li></ul>
+  <p><strong>Commands Used:</strong></p>
+  <div class="code"># Commands go here</div>
+  <div class="screenshot-placeholder">ADD SCREENSHOT HERE</div>
+</div>
+  <a href="portfolio.html" class="back-button">
+    Return to Portfolio
+  </a>
+
+</body>
+</html>
